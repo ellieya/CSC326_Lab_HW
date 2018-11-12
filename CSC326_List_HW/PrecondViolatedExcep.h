@@ -15,5 +15,4 @@ class PrecondViolatedExcep : public std::logic_error
 public:
    PrecondViolatedExcep(const std::string& message = "");
 }; // end PrecondViolatedExcep 
-#include "PrecondViolatedExcep.cpp"
 #endif
