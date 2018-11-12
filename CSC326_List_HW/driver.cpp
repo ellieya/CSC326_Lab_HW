@@ -78,13 +78,12 @@ void sort_list(LinkedList<int>& list) {
 			//Swap entry at sorted with entry at working element
 			try {
 				temp = list.getEntry(sorted);
+				list.replace(sorted, list.getEntry(working_element));
+				list.replace(working_element, temp);
 			}
 			catch (PrecondViolatedExcep error) {
 				cout << error.what() << endl;
 			}
-			list.replace(sorted, list.getEntry(working_element));
-			list.replace(working_element, temp);
-
 		}
 
 		//Change sorted
