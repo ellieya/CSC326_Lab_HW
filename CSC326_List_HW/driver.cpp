@@ -48,7 +48,6 @@ void print_list(ArrayList<int> list) {
 }
 
 void sort_list(ArrayList<int>& list) {
-
 	int i;
 	int sorted = 1; //# of already sorted that will also serve as index of working object
 	int working_element;
@@ -56,7 +55,7 @@ void sort_list(ArrayList<int>& list) {
 	int temp;
 
 	while (sorted < list.getLength()) { //Keep going until sorted == array_length
-		
+
 		//Initalize working_element and working_element_i with the current element in working index
 		working_element = sorted;
 
@@ -78,13 +77,12 @@ void sort_list(ArrayList<int>& list) {
 			//Swap entry at sorted with entry at working element
 			try {
 				temp = list.getEntry(sorted);
+				list.replace(sorted, list.getEntry(working_element));
+				list.replace(working_element, temp);
 			}
 			catch (PrecondViolatedExcep error) {
 				cout << error.what() << endl;
 			}
-			list.replace(sorted, list.getEntry(working_element));
-			list.replace(working_element, temp);
-
 		}
 
 		//Change sorted
